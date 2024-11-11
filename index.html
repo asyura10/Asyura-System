@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stat & Task System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="tabs">
+            <div class="tab active" onclick="openTab('home')">Home</div>
+            <div class="tab" onclick="openTab('tasks')">Task</div>
+            <div class="tab" onclick="openTab('history')">History</div>
+            <button class="reset-button" onclick="resetSystem()">Reset</button>
+        </div>
+
+        <div id="home" class="tab-content active">
+            <div class="home">
+                <img src="30 Human Body Outline Printable.jpg" alt="Human Shadow" class="human-body">
+                <div>
+                    <p>Level: <span id="level">1</span></p>
+                    <p>Exp: <span id="exp">0</span>/<span id="maxExp">100</span></p>
+                </div>
+            </div>
+            <div class="stats">
+                <div class="stat">Charm: <span id="Charm">0</span></div>
+                <div class="stat">Strength: <span id="Strength">0</span></div>
+                <div class="stat">Stamina: <span id="Stamina">0</span></div>
+                <div class="stat">Faith: <span id="Faith">0</span></div>
+                <div class="stat">Agility: <span id="Agility">0</span></div>
+                <Point class="stat">Point Bebas: <span id="freePoint">0</span></div>
+            <button onclick="useFreePoint()" class="use-point-button">Gunakan Point Bebas</button>
+            </div>
+        </div>
+        
+        <div id="tasks" class="tab-content">
+            <div id="taskList"></div>
+            <button class="button add" onclick="toggleAddTaskForm()">+ Add Task</button>
+
+            <div class="add-task-form">
+                <input type="text" id="taskTitle" placeholder="Task Title">
+                <input type="text" id="taskDetail" placeholder="Task Details">
+                <input type="number" id="taskExpReward" placeholder="Exp Reward">
+                <div id="statRewardsContainer">
+                    <select class="task-stat-select">
+                        <option value="Charm">Charm</option>
+                        <option value="Strength">Strength</option>
+                        <option value="Stamina">Stamina</option>
+                        <option value="Faith">Faith</option>
+                        <option value="Agility">Agility</option>
+                    </select>
+                    <input type="number" class="task-stat-reward" placeholder="Stat Reward">
+                    <button onclick="addStatReward()">Done</button>
+                </div>
+                <button class="button submit" onclick="addTask()">Submit Task</button>
+            </div>
+        </div>
+
+        <div id="history" class="tab-content">
+            <div id="historyList"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
